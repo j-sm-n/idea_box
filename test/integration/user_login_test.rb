@@ -1,0 +1,14 @@
+require 'test_helper'
+
+class UserLoginTest < ActionDispatch::IntegrationTest
+  test "registered user can login" do
+    user = User.create(username: "jasmin", password: "password", email_address: "jasmin@hudacsek.com")
+
+    visit login_path
+    fill_in "Username", with: "jasmin"
+    fill_in "Password", with: "password"
+    click_on "Login"
+
+    assert page.has_content?("Welcome, jasmin!")
+  end
+end
