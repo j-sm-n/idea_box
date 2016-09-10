@@ -89,6 +89,9 @@
 <row name="image_url" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
+<row name="alt_text" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
 <row name="created_at" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
