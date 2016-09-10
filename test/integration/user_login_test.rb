@@ -19,7 +19,6 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     fill_in "Username", with: "jasmin"
     fill_in "Password", with: "12345"
     click_on "Login"
-    save_and_open_page
 
     assert page.has_content?("Username and/or Password is incorrect")
   end
