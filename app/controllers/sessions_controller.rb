@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user
     else
-      # either user doesn't exist or password is incorrect
+      flash.now[:notice] = "Username and/or Password is incorrect"
+      render :new
     end
   end
 

@@ -1,11 +1,11 @@
 <h1>Create a new IdeaBox Account:</h1>
-
+<%= flash[:notice] %>
 <%= form_for(@user) do |f| %>
   <%= f.text_field :username, placeholder: "Username" %>
 
   <%= f.text_field :email_address, placeholder: "Email Address" %>
 
-  <%= f.password_field :password, placeholder: "Password" %>
+  <%= f.password_field :password, placeholder: "Password" %><br>
 
   <%= f.submit "Create Account" %>
 <% end %>
