@@ -1,11 +1,22 @@
-<h1>Login</h1>
-<%= flash[:notice] %>
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %> <br>
+<% if logged_in_admin? %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %> <br>
+  Admin User
 
-  <%= f.submit "Login" %>
+<% elsif logged_in_default? %>
+
+  Default User
+
+<% else %>
+
+  <h1>Login</h1>
+  <%= flash[:notice] %>
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %> <br>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %> <br>
+
+    <%= f.submit "Login" %>
+  <% end %>
 <% end %>
