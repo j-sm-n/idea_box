@@ -3,7 +3,11 @@ module ApplicationHelper
     current_user && current_user.admin?
   end
 
-  def logged_in_default?
-    current_user && current_user.default?
+  def find_all_idea_images(idea_id)
+    IdeasImage.where(idea_id: idea_id)
+  end
+
+  def user_home(user)
+    link_to "Back to Dashboard", user_path(user.id)
   end
 end

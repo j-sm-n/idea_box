@@ -1,0 +1,8 @@
+<h1>Edit Idea:</h1>
+<%= form_for([current_user, @idea]) do |f| %>
+  <%= f.text_field :title %><br>
+  <%= f.text_area :body_text %><br>
+  <%= f.label "Choose category:" %>
+  <%= f.collection_select(:category_id, @categories, :id, :name) %><br>
+  <%= f.submit %>
+<% end %>

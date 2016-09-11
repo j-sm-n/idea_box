@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :logged_in?, only: [:show]
+
   def new
     if current_user
       redirect_to current_user
@@ -20,11 +22,16 @@ class UsersController < ApplicationController
   end
 
   def show
+    
   end
 
 private
 
   def user_params
     params.require(:user).permit(:username, :password, :email_address)
+  end
+
+  def logged_in?
+    render file: "/public/404" unless current_user
   end
 end

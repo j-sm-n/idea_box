@@ -1,0 +1,9 @@
+<h1>All Ideas</h1>
+
+<% @ideas.each do |idea| %>
+  <%= link_to idea.title, user_idea_path(idea.user_id, idea) %><br>
+  <%= idea.body_text %><br>
+  <% find_all_idea_images(idea.id) do |image| %>
+    <%= image.image_url %>
+  <% end %>
+<% end %><br>
