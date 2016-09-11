@@ -1,22 +1,16 @@
-<% if logged_in_admin? %>
-
-  Admin User
-
-<% elsif logged_in_default? %>
-
-  Default User
-
-<% else %>
-
+<% if current_user.nil? %>
   <h1>Login</h1>
-  <%= flash[:notice] %>
-  <%= form_for(:session, url: login_path) do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %> <br>
+    <%= flash[:notice] %>
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :username %>
+      <%= f.text_field :username %> <br>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %> <br>
+      <%= f.label :password %>
+      <%= f.password_field :password %> <br>
 
-    <%= f.submit "Login" %>
-  <% end %>
+      <%= f.submit "Login" %>
+    <% end %>
+<% else %>
+  Welcome back, <%= current_user.username %>!
+  Go to <%= link_to "Dashboard", user_path(current_user.id)%>
 <% end %>

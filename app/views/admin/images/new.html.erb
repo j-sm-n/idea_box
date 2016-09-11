@@ -1,0 +1,12 @@
+<h1>Add New Image</h1>
+<%= form_for(@image, url: admin_images_path) do |f| %>
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+
+  <%= f.label :alt_text %>
+  <%= f.text_field :alt_text %>
+
+  <%= f.submit %>
+<% end %>
+<br>
+<%= link_to "All Images", admin_images_path %>

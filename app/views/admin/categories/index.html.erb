@@ -1,1 +1,7 @@
 <h1>All Categories</h1>
+<% @categories.each do |category| %>
+  <%= link_to category.name, admin_category_path(category.id) %><br>
+<% end %>
+<br>
+<%= link_to "Add New Category", new_admin_category_path %><br>
+<%= link_to "Back to Dashboard", user_path(@user) %>

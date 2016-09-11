@@ -12,7 +12,7 @@
     <% if current_user %> <!-- change this to a helper method called logged_in? later -->
       Welcome, <%= current_user.username %>!
       <%= link_to "Logout", logout_path, method: :delete %>
-    <% end %>
+    <% end %><br>
     <%= yield %>
   </body>
 </html>

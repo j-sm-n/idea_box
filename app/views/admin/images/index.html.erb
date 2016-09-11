@@ -1,1 +1,10 @@
+<%= flash[:notice] %><br>
 <h1>All Images</h1>
+
+<% @images.each do |image| %>
+  <img src="<%= image.image_url %>" alt="<%= image.alt_text %>"><br>
+  <%= link_to "Delete", admin_image_path(image.id), method: :delete %><br>
+<% end %>
+<br>
+<%= link_to "Add New Image", new_admin_image_path %><br>
+<%= link_to "Back to Dashboard", user_path(@user) %>
