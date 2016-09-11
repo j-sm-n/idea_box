@@ -2,6 +2,7 @@ require 'test_helper'
 
 class AdminCategoriesTest < ActionDispatch::IntegrationTest
   test "logged in admin sees categories index" do
+    skip
     admin = User.create(username: "penelope",
                         password: "boom",
                         role: 1)
