@@ -7,3 +7,5 @@
   <%= f.collection_select(:image_id, @images, :id, :alt_text) %><br>
   <%= f.submit "Add Image" %>
 <% end %>
+<br>
+<%= link_to "All Ideas", user_ideas_path %>

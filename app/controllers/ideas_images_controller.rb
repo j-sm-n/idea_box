@@ -9,8 +9,7 @@ class IdeasImagesController < ApplicationController
     @ideas_image = IdeasImage.new(ideas_image_params)
 
     if @ideas_image.save
-      byebug
-      redirect_to user_ideas_image_path(current_user.id, @ideas_image.id)
+      redirect_to user_idea_path(current_user, params[:ideas_image][:idea_id])
     else
       flash.now[:notice] = "Image did not save to Idea"
       render :new

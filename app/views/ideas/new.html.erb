@@ -6,3 +6,5 @@
   <%= f.collection_select(:category_id, @categories, :id, :name) %><br>
   <%= f.submit %>
 <% end %>
+<br>
+<%= link_to "All Ideas", user_ideas_path %>
