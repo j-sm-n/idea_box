@@ -1,12 +1,12 @@
 <h1>Dashboard</h1>
-Email: <%= current_user.email_address %>
+Email: <%= current_user.email_address %><br>
 
 <% if logged_in_admin? %>
-  <%= link_to "All Images", admin_images_path %>
-  <%= link_to "Add New Image", new_admin_image_path %>
-  <%= link_to "All Categories", admin_categories_path %>
+  <%= link_to "All Images", admin_images_path %><br>
+  <%= link_to "Add New Image", new_admin_image_path %><br>
+  <%= link_to "All Categories", admin_categories_path %><br>
   <%= link_to "Add New Category", new_admin_category_path %>
 <% else %>
-  <%= link_to "All Ideas", user_ideas_path(current_user.id) %>
+  <%= link_to "All Ideas", user_ideas_path(current_user.id) %><br>
   <%= link_to "Add New Idea", new_user_idea_path(current_user.id) %>
 <% end %>
