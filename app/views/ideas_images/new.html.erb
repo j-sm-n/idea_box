@@ -1,0 +1,11 @@
+<h1>Add New Image to Idea:</h1>
+
+<%= form_for([current_user, @ideas_image]) do |f| %>
+  <%= f.label "Select Idea to add image to:" %>
+  <%= f.collection_select(:idea_id, @ideas, :id, :title) %><br>
+  <%= f.label "Select Image:" %>
+  <%= f.collection_select(:image_id, @images, :id, :alt_text) %><br>
+  <%= f.submit "Add Image" %>
+<% end %>
+<br>
+<%= link_to "All Ideas", user_ideas_path %>

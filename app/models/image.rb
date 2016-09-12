@@ -1,6 +1,6 @@
 class Image < ActiveRecord::Base
   validates :image_url, presence: true
 
-  has_many :ideas, through: :ideas_images
+  has_and_belongs_to_many :ideas
 
 end

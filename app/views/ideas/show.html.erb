@@ -1,6 +1,9 @@
-<%= @idea.title %>
-<%= @idea.body_text %>
+<%= @idea.title %><br>
+<%= @idea.body_text %><br>
+<% @idea.images.each do |image| %>
+  <img src="<%= image.image_url %>" alt="<%= image.alt_text %>"><br>
+<% end %>
+<br>
 
-<%= link_to "Add Image", new_user_ideas_image_path(@idea.user_id) %>
 <%= link_to "Edit", edit_user_idea_path(@idea.user_id, @idea) %>
 <%= link_to "<< Back to Ideas", user_ideas_path(@idea.user_id) %>
